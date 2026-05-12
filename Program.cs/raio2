@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Raio_2
+{
+    internal class Calculadora
+    {
+        public double pi = 3.14;
+
+        public double Circunferencia (double r)
+        {
+            return 2.0* pi * r;
+        } 
+        public double Volume (double r)
+        {
+            return 4.0 / 3.0 * pi * r * r * r;
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+namespace Raio_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Calculadora Calc=new Calculadora();
+
+            Console.Write("entre com o valor do raio:");
+            double raio= double .Parse(Console.ReadLine());
+            double circ= Calc.Circunferencia(raio);
+            double volume= Calc.Volume(raio);
+
+            Console.WriteLine("circunferencia:" + circ.ToString("f2", CultureInfo.InvariantCulture));
+            Console.WriteLine("volume:"+ volume.ToString("f2", CultureInfo.InvariantCulture));
+            Console.WriteLine("valor de pi:" + Calc.pi.ToString("f2", CultureInfo.InvariantCulture));
+        }
+    }
+}
