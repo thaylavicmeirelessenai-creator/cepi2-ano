@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+namespace Thaylanovo
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Produto p = new Produto();
+
+            Console.WriteLine("entre com os dados do produto");
+            Console.WriteLine("nome:");
+            p.nome = Console.ReadLine();
+            Console.Write("preco:");
+            p.preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("quantidade no estoque:");
+            p.quantidade = int.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("dados do produto:" + p);
+
+            Console.Write("digite o numero de produtos a ser adicionado do estoque");
+            int qte = int.Parse(Console.ReadLine());
+            p.AdicionarProdutos(qte);
+            Console.WriteLine("");
+
+            Console.WriteLine("dados atualizados:" +p);
+            Console.WriteLine("");
+
+            Console.Write("digitar o numero de produtos a ser removido em estoque:");
+            qte = int.Parse(Console.ReadLine());
+            p.removerProdutos (qte);    
+            Console.WriteLine("");
+            Console.WriteLine("dados atualizados:"+p);
+
+
+
+
+                
+        }
+    }
+}
