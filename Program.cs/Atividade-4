@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+namespace Thayla_3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Funcionario func = new Funcionario();
+
+
+            Console.Write("nome:");
+            func.nome = Console.ReadLine();
+            Console.Write("Salario bruto:");
+            func.salariobruto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("impostos:");
+            func.impostos = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.WriteLine("");
+            Console.WriteLine("funcionario:" + func);
+
+            Console.WriteLine("");
+            Console.Write("deseja aumentar o salario em qual porcentagem");
+            double porcent  = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            func.aumentarsalario(porcent);
+
+            Console.WriteLine("");
+            Console.WriteLine("dados atualizados:" + func);
+            
+
+
+
+
+        }
+    }
+}
